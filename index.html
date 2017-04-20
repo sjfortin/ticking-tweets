@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Health Matters 2016 Twitter Ticker</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <ul id="webticker"></ul>
+    <div class="button">
+        <section>
+            <p>
+                <button class="btn btn-2" id="start"><i class="fa fa-play"></i> Start Ticker</button>
+                <button class="btn btn-2" id="stop"><i class="fa fa-stop"></i> Stop Ticker</button>
+                <button class="btn btn-2" onClick="window.location.reload()"><i class="fa fa-refresh"></i> Reload Tweets</button>
+            </p>
+            <p><a href="https://curator.twitter.com/curation/project/22209/stream/39058/collection/667080696721096704" target="blank">Health Matters Twitter Curator</a></p>
+        </section>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/twitter-post-fetcher.js"></script>
+    <script type="text/javascript" src="js/twitter-ticker.js"></script>
+    <script type="text/javascript" src="js/webticker.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#webticker').webTicker({
+                speed: 30,
+                hoverpause: false
+            });
+            $("#start").click(function() {
+                $("#webticker").webTicker('stop');
+            });
+            $("#start").click(function() {
+                $("#webticker").webTicker('cont');
+            });
+            $("#stop").click(function() {
+                $("#webticker").webTicker('stop');
+            });
+        })
+    </script>
+</body>
+
+</html>
